@@ -105,7 +105,7 @@ export default function PageOrder() {
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
   const onChangeStatus = (values: FormikValues) => {
-    return axios.put(`${API_PATHS.order}/order/${order.id}/status`, values)
+    return axios.post(`${API_PATHS.order}/order/${order.id}/status`, values)
       .then(({data}) => setOrder(data));
   };
 
